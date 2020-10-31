@@ -1,0 +1,175 @@
+
+.main-screen {
+		flex: 1 0 100%;
+		position: relative;
+		&__bg {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+		}
+}
+
+.header {
+	position: absolute;
+	z-index: 50;
+	width: 100%;
+	top: 35px;
+	
+	&__row {
+		height: 85px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__menu {
+	}
+	&__logo {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%);
+	}
+}
+.menu {
+
+	&__burgger {
+		display: none;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 36px;
+		height: 24px;
+		position: absolute;
+		top: 21px;
+		right: 20px;
+		z-index: 2;
+		cursor: pointer;
+		span {
+			width: 100%;
+			height: 3px;
+			background-color: #4d4959;
+		}
+		&-active{
+			span {
+				background-color: #fff;
+				transition: all 0.3s linear;
+				&:last-child {
+					transform: translateY(-10px) rotate(45deg);
+				}
+				&:first-child {
+					transform: translateY(10px)rotate(-45deg);
+				}
+				&:nth-child(even){
+					transform: scale(0);
+				}
+			}
+			
+		}
+	}
+	&__body {
+	}
+	&__list {
+		display: flex;
+		a {
+			font-size: 13px;
+			line-height: 1.2;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.2em;
+		}
+	}
+	&__link {
+		color: #4d4959;
+		margin: 0 38px;
+		position: relative;
+		&:nth-child(2) {
+		margin-right: 110px;
+		}
+		&:nth-child(3) {
+			margin-left: 110px;
+		}
+		&:before {
+			content: "";
+			background-color: #4d4959;
+			width: 2px;
+			height: 2px;
+			border-radius: 50%;
+			position: absolute;
+			top: 50%;
+			left: -38px;
+			margin-top: 1px;
+		}
+		&:nth-child(3), &:first-child {
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+}
+.lock {
+	overflow: hidden;
+}
+	
+
+@media (max-width: 767px){
+	.menu {
+		&__burgger {
+			display: flex;
+		}
+		&__body{
+			transform: translateY(-100%);
+			position: fixed;
+			top: 0;
+			left: 0;
+			background-color:#4d4959;
+			width: 100%;
+			height: 100%;
+			padding-top: 150px;
+			overflow: auto;
+			&-active {
+				transform: translateY(0px);
+				transition: all 0.3s linear;
+			}
+			
+		}
+		&__list {
+			flex-direction: column;
+			align-items: center;
+		}
+		&__link {
+			margin: 0 0 45px 0;
+			&:nth-child(3), &:nth-child(2) {
+				margin:  0 0 45px 0;
+			}
+			& a {
+				font-size: 20px;
+				line-height: 1;
+				color: #fff;
+			}
+			&:nth-child(3), &:first-child {
+				&:before {
+					display: block;
+				}
+			}
+			&:before {
+				background-color: #fff;
+				width: 4px;
+				height: 4px;
+				left: 50%;
+				top: 42.5px
+			}
+			&:last-child {
+				&:before {
+					display: none;
+				}
+			}
+			
+		}
+	}
+}
+
+
+
