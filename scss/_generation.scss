@@ -1,12 +1,14 @@
 .generation {
 	background-color: #f7f7f7;
-	&__block {
+
+	&__text-block {
 		padding: 117px 0 142px 0;
 	}
 }
 
-.block {
+.text-block {
 	text-align: center;
+
 	&__icon {
 		margin-bottom: 34px;
 	}
@@ -21,32 +23,36 @@
 		margin-bottom: 20px;
 	}
 
-	&__text {
+	&__discription {
 		font-size: 18px;
 		line-height: 34px;
 		color: #848789;
 	}
 }
-@media (max-width: 1024px){
+
+@media (max-width: 1024px) {
 	.generation {
-		&__block {
+		&__btext-lock {
 			padding: 80px 0 110px 0;
 		}
 	}
 }
-@media (max-width: 768px){
+
+@media (max-width: 768px) {
 	.generation {
-		&__block {
+		&__text-block {
 			padding: 50px 0 70px 0;
 		}
 	}
-	.block {
+
+	.text-block {
 		&__title {
 			font-size: 16px;
 		}
-		&__text {
+
+		&__discription {
 			font-size: 16px;
-			
+
 		}
 	}
 }

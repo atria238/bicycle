@@ -1,0 +1,158 @@
+.brands-row-1 {
+	
+}
+.brands-row {
+	
+	&__row {
+		display: flex;
+
+		&_column-big {
+			flex: 0 1 66.667%;
+		}
+
+		&_column-smoll {
+			flex: 0 1 33.33%;
+		}
+	}
+}
+.column-big {
+
+	&__img-wrapper {
+		height: 100%;
+		position: relative;
+		display: block;
+	}
+
+	&__logo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		background-color: rgba(100,194,158, 0.5);
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s ease;
+	}	
+	&__bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		&:hover + .column-big__logo {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: none;
+			
+		}
+	}
+}
+
+.column-smoll {
+	background-color: #fff;
+
+	&__text-block {
+		padding: 70px 68px 55px 68px;
+		div:last-child {
+			text-align: justify;
+		}
+	}
+
+	&__image {
+		padding-bottom: 37.9%;
+
+		&:before {
+			content: "";
+			display: block;
+			position: relative;
+			background-color: #fff;
+			width: 15px;
+			height: 15px;
+			left: 50%;
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+	}
+}
+
+.text-block {
+
+	&__discription {
+		
+		&_smoll{
+			font-size: 16px;
+			&:after {
+				content: "";
+				display: block;
+				margin: 40px auto 0 auto;
+				width: 50px;
+				height: 1px;
+				background-color: #848789;
+			}
+		}
+	}
+}
+@media (max-width: 1200px) {
+	.column-smoll {
+		
+			&__text-block {
+				padding: 40px 35px 35px 35px;
+			}
+			&__image {
+		
+				&:before {
+					width: 25px;
+					height: 25px;
+				}
+			}
+	}
+	.text-block {
+
+		&__discription {
+			
+			&_smoll{
+				&:after {
+					margin: 20px auto 0 auto;
+					
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.brands-row {
+
+		&__row {
+			flex-direction: column;
+			&_column-big {
+				order: 2;
+			}
+			
+			&_column-smoll {
+				order: 1;
+			}
+		}
+		
+	}
+
+	.column-big {
+
+		&__img-wrapper {
+			margin: 20px 20px 0 20px;
+			padding-bottom: 70%;
+		}
+	}
+	.column-smoll {
+		
+		
+		&__image {
+			margin: 20px 20px 0 20px;
+		
+		}
+}
+}

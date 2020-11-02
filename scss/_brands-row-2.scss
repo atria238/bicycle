@@ -1,0 +1,13 @@
+
+.brands-row-2 .brands-row{
+		&__row {
+
+		&_column-big {
+			order: 2
+		}
+
+		&_column-smoll {
+			order: 1
+		}
+	}
+}

@@ -33,6 +33,7 @@
 		transform: translateX(-50%);
 	}
 }
+
 .menu {
 
 	&__burgger {
@@ -72,13 +73,6 @@
 	}
 	&__list {
 		display: flex;
-		a {
-			font-size: 13px;
-			line-height: 1.2;
-			font-weight: 700;
-			text-transform: uppercase;
-			letter-spacing: 0.2em;
-		}
 	}
 	&__link {
 		color: #4d4959;
@@ -106,13 +100,19 @@
 				display: none;
 			}
 		}
+		a {
+			font-size: 13px;
+			line-height: 1.2;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.2em;
+			color: #4d4959;
+		}
 	}
-
 }
 .lock {
 	overflow: hidden;
 }
-	
 
 @media (max-width: 767px){
 	.menu {
