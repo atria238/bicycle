@@ -158,5 +158,3 @@ function slider() {
 	});
 }
 slider();
-
-https://github.com/atrial238/bicycle.git

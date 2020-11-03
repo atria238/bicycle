@@ -25,6 +25,7 @@
 
 	&__logo {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		position: absolute;
@@ -37,6 +38,15 @@
 		opacity: 0;
 		visibility: hidden;
 		transition: all 0.3s ease;
+		span {
+			margin-top: 10px;
+			font-size: 14px;
+			line-height: 1.2;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.2em;
+			color: #ffffff;
+		}
 	}	
 	&__bg {
 		position: absolute;
@@ -143,16 +153,16 @@
 	.column-big {
 
 		&__img-wrapper {
-			margin: 20px 20px 0 20px;
+			// margin: 20px 20px 0 20px;
 			padding-bottom: 70%;
 		}
 	}
-	.column-smoll {
+// 	.column-smoll {
 		
 		
-		&__image {
-			margin: 20px 20px 0 20px;
+// 		&__image {
+// 			margin: 20px 20px 0 20px;
 		
-		}
-}
+// 		}
+// }
 }
