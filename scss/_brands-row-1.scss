@@ -138,14 +138,15 @@
 	.brands-row {
 
 		&__row {
-			flex-direction: column;
-			&_column-big {
-				order: 2;
-			}
+			// flex-direction: column;
+			// &_column-big {
+			// 	order: 2;
+			// }
 			
-			&_column-smoll {
-				order: 1;
-			}
+			// &_column-smoll {
+			// 	order: 1;
+			// }
+			display: block;
 		}
 		
 	}

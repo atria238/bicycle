@@ -52,7 +52,7 @@
 			height: 3px;
 			background-color: #4d4959;
 		}
-		&-active{
+		&-active {
 			span {
 				background-color: #fff;
 				transition: all 0.3s linear;
@@ -60,7 +60,7 @@
 					transform: translateY(-10px) rotate(45deg);
 				}
 				&:first-child {
-					transform: translateY(10px)rotate(-45deg);
+					transform: translateY(10px) rotate(-45deg);
 				}
 				&:nth-child(even){
 					transform: scale(0);
