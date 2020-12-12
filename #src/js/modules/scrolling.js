@@ -59,7 +59,7 @@ const smoothScrolling = (linkSelector) => {
 
     function moveScroll(fromLink, toAnchor, hash) {
         let interval = 1,
-            speed = (fromLink > toAnchor) ? -20 : 20,
+            speed = (fromLink > toAnchor) ? -30 : 30,
             prevScrollTop,
 
             move = setInterval(() => {

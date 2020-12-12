@@ -108,14 +108,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-window.addEventListener('DOMContentLoaded', () => {
-	'use strict';
+
+	
 	Object(_modules_imageToBackground_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
 	Object(_modules_menuToggle__WEBPACK_IMPORTED_MODULE_1__["default"])();
 	Object(_modules_slider__WEBPACK_IMPORTED_MODULE_2__["default"])();
 	Object(_modules_form__WEBPACK_IMPORTED_MODULE_3__["default"])();
 	Object(_modules_scrolling__WEBPACK_IMPORTED_MODULE_4__["smoothScrolling"])('.inner-link');
-});
+
 
 /***/ }),
 
@@ -412,7 +412,7 @@ const smoothScrolling = (linkSelector) => {
 
     function moveScroll(fromLink, toAnchor, hash) {
         let interval = 1,
-            speed = (fromLink > toAnchor) ? -20 : 20,
+            speed = (fromLink > toAnchor) ? -30 : 30,
             prevScrollTop,
 
             move = setInterval(() => {

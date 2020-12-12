@@ -21,6 +21,7 @@ const {parallel, watch, src, dest, series, gulp} = require('gulp'),
 	fonter          = require('gulp-fonter'),
 	fs              = require('fs'),
 	newer           = require('gulp-newer'),
+	uglify          = require('gulp-uglify-es'),
 	webpack			 = require("webpack-stream"),
 	path = {
 		build: {
@@ -34,7 +35,6 @@ const {parallel, watch, src, dest, series, gulp} = require('gulp'),
 			html: [source_folder + '/*.html', '!' + source_folder + '/_*.html'],
 			css: source_folder + '/scss/style.scss',
 			js: source_folder + '/js/main.js',
-			jsCheckOut: source_folder + '/js/checkoutIE.js',
 			img: source_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
 			fonts: source_folder + '/fonts/*.ttf'
 		},
@@ -109,49 +109,53 @@ function sprite() {
 }
 
 function scriptDev() {
-		src(path.src.jsCheckOut)
-		.pipe(dest(path.build.js));
-return src(path.src.js)
-		.pipe(webpack({
-			mode: 'development',
-			output: {
-				filename: 'script.js'
-			},
-			watch: false,
-			devtool: "source-map"
-		}))
-		.pipe(dest(path.build.js))
-		.pipe(browserSync.stream());
+	return src(path.src.js)
+	.pipe(webpack({
+		mode: 'development',
+		output: {
+			 filename: 'script.js'
+		},
+		watch: false,
+		devtool: "source-map"
+	}))
+	.pipe(dest(path.build.js))
+	.pipe(browserSync.stream());
 }
 
 function scriptProd () {
-		src(path.src.jsCheckOut)
-		.pipe(dest(path.build.js));
+	src(path.src.js)
+	.pipe(webpack({
+		mode: 'production',
+		output: {
+			 filename: 'script.min.js'
+		}
+	}))
+	.pipe(dest(path.build.js));
 return src(path.src.js)
-		.pipe(webpack({
-			mode: 'production',
-			output: {
-				filename: 'script.min.js'
-			},
-			module: {
-				rules: [
-					{
-					test: /\.m?js$/,
-					exclude: /(node_modules|bower_components)/,
-					use: {
-						loader: 'babel-loader',
-						options: {
-							presets: [['@babel/preset-env', {
-								corejs: 3,
-								useBuiltIns: "usage"
-								}]]
-							}
+	.pipe(webpack({
+		mode: 'production',
+		output: {
+			filename: 'scriptIE.min.js'
+		},
+		module: {
+			rules: [
+				{
+				  test: /\.m?js$/,
+				  exclude: /(node_modules|bower_components)/,
+				  use: {
+					 loader: 'babel-loader',
+					 options: {
+						presets: [['@babel/preset-env', {
+							 corejs: 3,
+							 useBuiltIns: "usage"
+							}]]
 						}
 					}
-				]
-			}
-		}))
-		.pipe(dest(path.build.js));
+				}
+			]
+		}
+	}))
+	.pipe(dest(path.build.js));
 }
 
 
