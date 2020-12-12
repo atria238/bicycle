@@ -1,0 +1,157 @@
+.slider {
+	
+	padding: 124px 0 68px 0;
+	
+	&__wrapper {
+		position: relative;
+		
+	}
+	&__inner {
+		overflow: hidden;
+	}
+
+	&__field {
+		position: relative;
+		touch-action: pan-y;
+	}
+
+	&__slide {
+		text-align: center;
+		
+	}
+	&__dots {
+		display: flex;
+      justify-content: center;
+
+	}
+	&__prev-arrow, &__next-arrow  {
+		position: absolute;
+		top: 50%;
+		left: -12%;
+		width: 25px;
+		height: 25px;
+		border-left: 3px solid #a9afb3;
+		border-bottom: 3px solid #a9afb3;
+		transform: translate(0, -50%) rotate(45deg);
+		cursor: pointer;
+		outline: none;
+		}
+	&__next-arrow {
+		top: 50%;
+		left: 110%;
+		border: none;
+		border-right: 3px solid #a9afb3;
+		border-top: 3px solid #a9afb3;
+		
+		}
+}
+
+.slide {
+	
+	&__social-icon {
+		margin-bottom: 30px;
+		pointer-events: none;
+	}
+
+	&__title {
+		pointer-events: none;
+		user-select: none;
+		font-size: 18px;
+		line-height: 1.2;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		color: #353738;
+		margin-bottom: 20px;
+		span {
+			font-weight: 300;
+			color: #848789;
+		}
+	}
+
+	&__discription {
+		pointer-events: none;
+		user-select: none;
+		font-size: 24px;
+		line-height: 34px;
+		font-weight: 400;
+		font-style: italic;
+		color: #848789;
+		margin-bottom: 100px;
+	}
+}
+
+.tns-nav {
+	text-align: center;
+}
+.tns-nav button {
+	outline: none;
+	width: 11px;
+	height: 11px;
+	margin: 0 5px;
+	border: 1px #a9afb3 solid;
+	border-radius: 50%;
+}
+.tns-nav .tns-nav-active {
+	background-color: #a9afb3;
+}
+
+.shiftSlide {
+	transition: transform 0.5s;
+}
+.grabbing {
+	cursor: grabbing;
+}
+.grab {
+	cursor: grab;
+}
+
+@media (max-width: 1430px) {
+	.slider {
+		
+		&__prev-arrow, &__next-arrow  {
+			
+		display: none;
+			
+			cursor: pointer;
+			}
+		&__next-arrow {
+			
+			display: none;
+			
+			
+			}
+	}
+}
+@media (max-width: 1024px) {
+	.slider {
+		padding: 80px 0 28px 0;
+	}
+	.slide {
+
+		&__discription {
+			margin-bottom: 50px;
+		}
+	}
+}
+@media (max-width: 767px) {
+	.slider {
+		padding: 50px 0 18px 0;
+	}
+	.slide {
+
+		&__discription {
+			margin-bottom: 30px;
+		}
+	}
+}
+@media (max-width: 424px) {
+	.slider {
+		padding: 30px 0 10px 0;
+	}
+	.slide {
+
+		&__discription {
+			margin-bottom: 10px;
+		}
+	}
+}
